@@ -1,5 +1,69 @@
 import React from 'react';
 
+const Codes = ({ codes, onBack }) => {
+  if (!codes || codes.length === 0) return null;
+
+  return (
+    <div>
+      <button
+        onClick={onBack}
+        style={{
+          marginBottom: '1em',
+          color: 'var(--blue)',
+          border: 'none',
+          backgroundColor: 'transparent',
+        }}
+      ><i>
+          ← Retour
+        </i></button>
+      <div style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(3, 1fr)',
+        gap: '1em',
+        marginBottom: '2em'
+      }}>
+        {codes.map((qr, index) => (
+          <a href={"https://qareco.de/" + qr.code} key={qr.code} style={{
+            backgroundColor: 'white',
+            border: '1px solid var(--border)',
+            borderRadius: '10px',
+            padding: '0.5em',
+            textAlign: 'center',
+            boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+            color: "#333",
+            textDecoration: 'none',
+          }}>
+
+            {qr.nom ? (
+              <div style={{ fontSize: '1em', color: '#666', marginBottom: '0.5em' }}>
+                {qr.nom}
+              </div>
+            ) : (
+              <div style={{ fontSize: '1em', color: '#666', marginBottom: '0.5em' }}>
+                <i>Sans nom</i>
+              </div>
+            )
+            }
+            <img
+              src={qr.imageUrl || "https://via.placeholder.com/120x80/dc2626/ffffff?text=Alarme"}
+              alt={qr.nom || "Code QR"}
+              style={{ width: '100%', aspectRatio: '3 / 2', objectFit: 'cover', borderRadius: '6px', marginBottom: '0.5em', objectPosition: 'center' }}
+            />
+
+            <div style={{ fontSize: '0.9em',  }}>
+              {qr.code}
+            </div>
+
+          </a>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default Codes;
+
+/*
 export default function Code({
     title = "Placeholder",
     code = "1111111",
@@ -75,3 +139,4 @@ export default function Code({
         </>
     );
 };
+*/

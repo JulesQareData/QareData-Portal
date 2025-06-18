@@ -7,7 +7,7 @@ export default function Title({ title = "Blanchemaille", address = "87 rue du Fo
         boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
         padding: '1em',
         width: '100%',
-        border: '2px solid var(--border)',
+        border: '1px solid var(--border)',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'flex-start',
