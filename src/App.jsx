@@ -1,34 +1,50 @@
+// Fonctionnalités
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
+// Fichiers
 import './App.css'
+import Title from './components/Title';
+import InfoButton from './components/InfoButton';
+import Code from './components/Code';
+import Type from './components/Type';
+
+// Images
+import logo from '../public/img/Logo.png';
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <section id="body">
+      <img src={logo} alt="Logo de QareData" class="logo" />
+      <Title title="TERRASSES DU CHATEAU" address="10 RUE DU CHATEAU, 59000, Lille" />
+      <h2 class="h2" >QR codes triés par type :</h2>
+      <Code/>
+      <Type/>
+      <style jsx>
+        {`
+          .logo {
+            width: 80dvw;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+          }
+          p {
+            text-align: center;
+            font-size: 1.5rem;
+            color: #333;
+          }
+          h2 {
+            align-self: flex-start;
+            font-size: 1.5em;
+            color: var(--blue);
+            font-weight: 700;
+            margin: 1em 0;
+          }
+        `}
+      </style>
+      <InfoButton />
+
+    </section>
   )
 }
 
