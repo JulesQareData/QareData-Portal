@@ -42,7 +42,7 @@ const Search = ({ qrCodes, setQrCodes, originalQrCodes, setOriginalQrCodes, setI
                 </button>
                 <input 
                     type="text" 
-                    placeholder="Rechercher par nom, type ou code..." 
+                    placeholder="Nom, type ou code..." 
                     value={searchTerm}
                     onChange={(e) => handleSearch(e.target.value)}
                 />
