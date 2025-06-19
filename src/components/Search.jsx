@@ -110,6 +110,7 @@ const Search = ({ qrCodes, setQrCodes, originalQrCodes, setOriginalQrCodes, setI
                         color: var(--text);
                         background-color: transparent;
                         padding-right: 2.5em;
+                        overflow: hidden;
                     }
                 `}
             </style>
